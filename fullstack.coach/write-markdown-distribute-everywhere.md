@@ -272,8 +272,51 @@ And of course to install it on your computer:
 ~ npm install crosspost -g
 ```
 
-There are things to keep in mind when using CrossPost, so please check out the
-docs before you dive into it or ping me with any doubts :)
+### Pre-configuration steps & caveats on Webflow
+
+After publishing on webflow for the first time your article will be in Staged
+mode. You will still need to make adjustments like setting your custom fields
+images (integration for that is in the making) and a post summary.
+
+When you update your posts, CrossPost will only update your article body and
+your title (if you changed any of them).
+
+Once your article is on webflow, you might encounter weird behavior inside the
+webflow editor. For example, I can't see the ordered list and unordered list items
+inside the editor, but it displays correctly in the published version. Since you
+want to keep your article writing outside of webflow anyway, it shouldn't be too
+big of a deal. However keep in mind, **you won't be able to change your articles
+inside webflow anymore**. If you ever hit the save button, the meta information
+(like HTML classes) that is sent by CrossPost will be overwritten by webflow
+and you won't see some stuff anymore. In this case, you'd need to send the article
+with CrossPost up there again (deleting the messed up article first, to keep the
+canonical URL consistent).
+
+### Add syntax highlighting to webflow
+
+You will need to add something like prism to enable syntax highlighting. This should
+be quick:
+
+[...]
+ADD PRISM JS
+CHOOSE PRISM THEME
+ADD PRISM CSS
+
+### Add additional CSS to your content collection
+
+You may also want to add some extra CSS to your blog posts collection, e.g. to
+add some extra top margin on headings (h1, h2, etc.). In my experience the raw
+HTML headings looked a bit pressed together but adding CSS to a collection is
+done quickly in webflow.
+
+Make sure your changes don't conflict with existing posts (if you have any).
+This is how my CSS changes looked like:
+
+CSS FIXES WEBFLOW.png
+![]()
+
+For more technical details on how CrossPost works, check out the
+[GitHub docs]() or ping me with any doubts :)
 
 ## dev.to
 
@@ -328,12 +371,12 @@ to our ignorance and do some manual cross posting work:
 ...first, you'll need to import your post via [Medium's import function]()
 
 IMPORT YOUR ARTICLE TO MEDIUM.png
-[]()
+![]()
 
 ...next, you will add the canonical URL to your post.
 
 ADD CANONICAL URL MEDIUM.png
-[]()
+![]()
 
 ...and last, you might want to make your code syntax highlighted with something
 like this [nice tool](). (Which I obviously skipped, because that's too big of a
