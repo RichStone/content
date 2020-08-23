@@ -226,13 +226,16 @@ When it comes to a full stack developer portfolio or blog, my take is:
 1. It has to look well-designed - By default!
 1. It has to be low maintenance - And still fully controllable!
 
-This is what I personally get from webflow. While building my portfolio/blog
-page, it somehow turned into [fullstack.coach](https://fullstack.coach), but no
-worries I'll set up a portfolio sample soon to give you an example.
+This is what I personally get from webflow (if you don't count the times when I
+build custom integrations for it 😅). While building my portfolio/blog page, it
+somehow turned into [fullstack.coach](https://fullstack.coach), but no worries
+I'll set up a portfolio sample soon to give you an example.
 
 I'll post more on this in my coming portfolio guide, keep tuned! 📻 If you like
-the idea of webflow already, make sure to register via my link and let me know
-if you did so (You'll be honored with big kudos :))).
+the idea of webflow already, make sure to [register via my link]() and let me
+know if you did so (You'll be honored with big kudos :))). Keep in mind though,
+that a webflow will be 20 bucks a month, though, so only consider it if you are
+serious about blogging!
 
 > How I did it for this article: I wrote the article in markdown and sent it to
 > webflow via CrossPost
@@ -241,10 +244,11 @@ Anyway, webflow does not support markdown by default. That's a major issue if
 you are a badass developer writing about code using markdown code. There are
 workarounds and hacks to make it work but they all come with major drawbacks.
 
-**This was one of the reasons for me to create [CrossPost]()**.
+**This was one of the reasons for me to create
+[CrossPost](https://github.com/RichStone/crosspost-markdown)**.
 
-The basic idea of CrossPost is to have a CLI tool and send your articles to your
-webflow blog with one command:
+The basic idea of CrossPost is to have a CLI tool and send your markdown
+articles to your webflow blog with one command:
 
 ```bash
 # go to your article's location
@@ -272,51 +276,99 @@ And of course to install it on your computer:
 ~ npm install crosspost -g
 ```
 
-### Pre-configuration steps & caveats on Webflow
+### Configuration steps & caveats with Webflow
 
-After publishing on webflow for the first time your article will be in Staged
-mode. You will still need to make adjustments like setting your custom fields
-images (integration for that is in the making) and a post summary.
+**Before publishing on webflow**, you'll need to set up CrossPost with webflow:
 
-When you update your posts, CrossPost will only update your article body and
-your title (if you changed any of them).
+```bash
+~ crosspost configure --only webflow
+```
 
-Once your article is on webflow, you might encounter weird behavior inside the
-webflow editor. For example, I can't see the ordered list and unordered list items
-inside the editor, but it displays correctly in the published version. Since you
-want to keep your article writing outside of webflow anyway, it shouldn't be too
-big of a deal. However keep in mind, **you won't be able to change your articles
-inside webflow anymore**. If you ever hit the save button, the meta information
-(like HTML classes) that is sent by CrossPost will be overwritten by webflow
-and you won't see some stuff anymore. In this case, you'd need to send the article
-with CrossPost up there again (deleting the messed up article first, to keep the
-canonical URL consistent).
+It's just a few steps actually if you make use of the [webflow CMS
+API](https://developers.webflow.com/#authentication):
+
+1. ✅ Get webflow API key
+1. ✅ Get site ID With the API key, you can get your site IDs
+1. ✅ Get collection ID of your Content With your site ID, you can get the
+   collection ID of your blog content
+1. ✅ Add the full URL to your webflow articles E.g. the base URL of the
+   [fullstack.coach](https://fullstack.coach) content is
+   `https://fullstack.coach/post`(don't ask why 😅)
+
+After everything went fine, your configure output should look something like
+this:
+
+```bash
+~ crosspost configure
+✅ webflow API key is present
+✅ webflow collection ID is present
+✅ webflow Articles URL is configured👍
+✅ devto is configured👍
+
+Choose an option:
+--all to configure all platforms.
+
+ℹ️ run `crosspost configure --help` to see all the specific options ℹ️
+```
 
 ### Add syntax highlighting to webflow
 
-You will need to add something like prism to enable syntax highlighting. This should
-be quick:
+You will need to add something like prism to enable syntax highlighting. This
+should be quick:
 
 [...]
-ADD PRISM JS
-CHOOSE PRISM THEME
-ADD PRISM CSS
+ADD PRISM JS TO END OF BODY CHOOSE PRISM THEME ADD PRISM CSS TO HEAD
+
+Let me know if you get stuck on any of these config step, I'll be happy to
+elaborate on it more.
+
+---
+
+**After publishing on webflow** for the first time, your article will be in
+Staged mode. You will still need to make adjustments like setting your custom
+fields images (integration for that is in the making) and a post summary.
+
+When you update your posts, CrossPost will only update your article body and
+your title (if you changed any of them). If you'd like to have more granular
+control, we'll need to issue some Pull Requests to CrossPost ;)
+
+- If you click inside the webflow and then the "Save" button, **webflow will
+  mess up the formatting** because it will delete the HTML metadata that we've
+  sent over with CrossPost. This means:
+  - Don't click inside the webflow editor and then "Save"
+  - If you publish with CrossPost, you can't make use of the webflow editor
+    anymore (you still will be able to change other data inside the CMS view,
+    like images, summary, authors etc.)
+  - If you still did it by mistake, just republish from CrossPost, this will
+    update the content with the correct HTML again (e.g. `~ crosspost article
+    test.md`)
+- Once your article is on webflow, you might encounter weird behavior inside the
+  webflow editor.
+  - For example, I can't see the ordered list and unordered list items inside
+    the editor, but it displays correctly in the published version. Since you
+    want to keep your article writing outside of webflow anyway, it shouldn't be
+    too big of a deal.
+- The integration relies on you keeping to make update to your posts via
+  CrossPost.
+  - If you make changes to your article content inside webflow, CrossPost will
+    overwrite them with the contents of your markdown file on the next publish.
+  - Apart from that, as mentioned already, **if you ever change anything
+    directly in the webflow editor, the formatting will get messed up**, since
+    hitting the Save button will overwrite some HTML metadata that we send with
+    CrossPost.
 
 ### Add additional CSS to your content collection
 
 You may also want to add some extra CSS to your blog posts collection, e.g. to
-add some extra top margin on headings (h1, h2, etc.). In my experience the raw
-HTML headings looked a bit pressed together but adding CSS to a collection is
-done quickly in webflow.
+add some extra margins on headings and paragraphs (h1, h2, p tags etc.). In my
+experience the raw HTML headings looked a bit pressed together but adding CSS to
+a collection is done quickly in webflow.
 
 Make sure your changes don't conflict with existing posts (if you have any).
 This is how my CSS changes looked like:
 
 CSS FIXES WEBFLOW.png
 ![]()
-
-For more technical details on how CrossPost works, check out the
-[GitHub docs]() or ping me with any doubts :)
 
 ## dev.to
 
@@ -348,8 +400,40 @@ And again, to update your existing article on all platforms:
 ~ crosspost article your-amazing-writing.md
 ```
 
-Again, read up on the [CrossPost docs]() a bit before installing CrossPost and
-wildly using it ;)
+### Configurations and Caveats with dev.to
+
+As of now, with CrossPost your article will be published as a Draft. You will
+still need to log in and perform some additional configurations, like:
+
+- adding tags
+- adding a header image
+- switching the article from Draft to Published
+
+Please let me know if you'd like us to add more automated configurations like
+this inside CrossPost or feel free to issue a Pull Request, so we'd never have
+to leave the terminal again 😅
+
+## General CrossPost Caveats & Fun Facts
+
+- When you publish with CrossPost, an additional configuration file gets
+  created.
+  - You'll need to store this file together with your posts in order to keep
+    using CrossPost because consistency can only be achieved if CrossPost knows
+    about the article IDs on the different platforms.
+- **Your post has to start with a h1 markdown title ('#')**. It's a useful
+  markdownlint convention and CrossPost also relies on it to set the title of
+  the posts correctly.
+  - Titles on webflow and dev.to will be automatically removed from the article
+    body and will be set via the API.
+- Your markdown files will be converted with
+  [showdown](https://github.com/showdownjs/showdown) to [GitHub flavored
+  markdown](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
+  before pushing up to space 🚀.
+
+For more technical details on how CrossPost works, current issues and planned
+features, check out the [GitHub
+repo](https://github.com/RichStone/crosspost-markdown) or ping me with any
+doubts :)
 
 ## Medium
 
@@ -359,9 +443,9 @@ Really?
 
 And that's just the bird crap on the tip of the iceberg of Medium's crimes. 🐧
 
-But at they do allow for a canonical URL which did positively surprise me,
-really. And they have users, tons of readers, potentially even people that might
-find usefulness or joy in your content.
+But they do allow for a canonical URL and article imports which did positively
+surprise me, really. And they have users, tons of readers, potentially even
+people that might find usefulness or joy in your content.
 
 So, if you still want to be seen there, we'll need to add some additional steps
 to our ignorance and do some manual cross posting work:
@@ -414,4 +498,4 @@ days...
 Let me know if you'd like a platform of yours integrated with the IWE or with
 CrossPost and I can look into it!
 
-And now go write that content!
+And now go let your content be seen!
