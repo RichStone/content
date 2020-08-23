@@ -1,20 +1,37 @@
-# The Pefect Set Up to Write your Content in Markdown and CrossPost it to Webflow, dev.to, GitHub, Medium & codementor
+# How to Write & Cross Post your Markdown Content
 
-This is Your ultimate guide that proposes a solution to write your blog in
-markdown and to cross post it to different platforms. There are tons of tips on
+This is your _Ultimate Guide_ that proposes a solution to write your blog in
+markdown and to cross post it to different platforms. Here you will find tips on
 how to set up your IWE (Integrated Writer's Environment) and even a few goodies
 on marketing as well as on content creation.
 
-It will be of special interest to you if you use webflow to host your blog. But
-you will also find big interesting bites if you have a developer or a technical
-blog which come with their own pecularities and fun parts. Or maybe you'd like
-to open source your blog too?
+By the way, the original title of this post was:
 
-By the way, I just always wanted to write that something's an "Ultimate Guide",
-but actually it's just a bunch of paragraphs. It will be probably an eternal
-WIP, and if you are a happy person, i.e. you are reading this on its original
-place of spawnment ([fullstack.coach]()) or on GitHub(YOU NERD!) or on dev.to,
-then you will always have the most up to date version of it. Congrats!
+## The Pefect Set Up to Write your Software Developer Blog Content in Markdown and CrossPost it to Webflow, dev.to, GitHub, Medium & codementor
+
+However, this one was a bit over the [recommended 60 max.
+chars](https://www.mheroes.com/that-blog-title-is-too-long-are-you-counting/)
+for blog titles...
+
+From this longer title you'll see that this post will be of special interest to
+you if you use webflow to host your blog.
+
+**And** if you have some sort of a software developer or technical blog content,
+since we go deeply into things like code syntax highlighting and
+developer-focused blogging platforms.
+
+**Or** maybe you just love markdown.
+
+**Or** you'd like to open source your blog too?
+
+By the way, I just always wanted to write that something's an _"Ultimate
+Guide"_, but actually it's just a bunch of paragraphs. It will be probably an
+eternal WIP, considering all the platforms and different tastes involved. If you
+are a happy person, i.e. you are reading this on its original place of spawnment
+([fullstack.coach]()) or in the post's very core root on
+[Github](https://github.com/RichStone/content/blob/content/fullstack.coach/write-markdown-distribute-everywhere.md)
+(YOU NERD!) or on dev.to, then you will always have the most up to date version
+of it. Congrats!🎉
 
 > In case you start to wonder now: This article is published on all the
 > mentioned platforms with as much automation as possible. The original article
@@ -41,7 +58,7 @@ do you keep your writing in the beloved markdown??
 ## Enter CrossPost 🔮
 
 CrossPost is a tool that I wrote on some occasional free time slots. Like a
-magic ball, it's intended to solve all the issues described above. At the
+magic ball, it's intended to magically solve some of the issues above. At the
 moment, it has great capabilities to let you write markdown in webflow,
 automatically publish your articles on webflow and on dev.to.
 
@@ -53,7 +70,7 @@ will be, unless you try it out.
 I am open to integrating new platforms with CrossPost or describing them here in
 more depth, feel free to suggest anything or fire up a pull request!
 
-## Perequisites
+## Theoretical Perequisites
 
 Let's talk some serious stuff first, so that we have a common standpoint when we
 speak about systematic cross-posting.
@@ -102,7 +119,7 @@ do any of the above with them later.
 
 I consider platforms like Wordpress already self-hosted, because you own it
 enough. I can't cope with the plugin environment of Wordpress which is also the
-reason why I actively advise for a [developer-friendly alternative LINK TO BLOG
+reason why I actively advise for a [developer-friendly alternative [LINK TO BLOG
 POST OF THE GUYS]() that I use myself: Webflow ([affiliate 🤩 link]()).
 
 > Congratulations 🎉We've learned a ton about what I think I understand about
@@ -313,24 +330,47 @@ Choose an option:
 
 ### Add syntax highlighting to webflow
 
-You will need to add something like prism to enable syntax highlighting. This
-should be quick:
+You will need to add something like prism to enable syntax highlighting. This is
+how I quickly did it:
 
-[...]
-ADD PRISM JS TO END OF BODY CHOOSE PRISM THEME ADD PRISM CSS TO HEAD
+1. Add a stylesheet your collection's custom head code:
 
-Let me know if you get stuck on any of these config step, I'll be happy to
-elaborate on it more.
+```html
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css" rel="stylesheet" />
+```
+
+2. Add the prism javascript and autoloader to your end of body collection's
+   custom code:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+```
+
+You can have a different theme, by simply checking out the different default
+themes on jsdeliver.net or configure your own theme over at
+<https://prismjs.com/download.html>.
+
+To figure this out, I used the [instructions provided by
+prism](https://prismjs.com/#basic-usage-cdn).
+
+Let me know if you get stuck on any of the config step, I'll be happy to
+elaborate more on any of them if needed.
 
 ---
 
-**After publishing on webflow** for the first time, your article will be in
+**After publishing on webflow** for the first time, your articles will be in
 Staged mode. You will still need to make adjustments like setting your custom
 fields images (integration for that is in the making) and a post summary.
 
 When you update your posts, CrossPost will only update your article body and
 your title (if you changed any of them). If you'd like to have more granular
 control, we'll need to issue some Pull Requests to CrossPost ;)
+
+Other than that, the changes of an updated post will be also in webflow's staged
+mode first. This way you can still review your changes before publishing them to
+your live environment. (a `--live` tag to publish directly to production is in
+the making, though)
 
 - If you click inside the webflow and then the "Save" button, **webflow will
   mess up the formatting** because it will delete the HTML metadata that we've
@@ -495,7 +535,9 @@ days...
 
 ## Your Custom Platform
 
-Let me know if you'd like a platform of yours integrated with the IWE or with
-CrossPost and I can look into it!
+Are you using Wordpress, strapi or other platforms with APIs for your content?
 
-And now go let your content be seen!
+Let me know if you'd like them integrated with the IWE or with CrossPost and I
+can look into it!
+
+And now go let your content be seen! 🚀🚀🚀
