@@ -8,17 +8,17 @@ By the way, the original title of this post was:
 
 However, this one was a bit over the [recommended 60 max. chars](https://www.mheroes.com/that-blog-title-is-too-long-are-you-counting/) for blog titles...
 
-From this longer title you'll see that this post will be of special interest to you if you use webflow to host your blog.
+From this longer title, you'll see that this post will be of special interest to you if you use webflow to host your blog.
 
-**And** if you have some sort of a software developer or technical blog content, since we go deeply into things like code syntax highlighting and developer-focused blogging platforms.
+**And** if you have some sort of a software developer or technical blog content since we go deeply into things like code syntax highlighting proper hosting, and developer-focused content platforms.
 
 **Or** maybe you just ❤️ markdown?
 
 **Or** you'd like to open source your blog on GitHub too?
 
-By the way, I just always wanted to write that something's an _"Ultimate Guide"_, but actually it's just a bunch of paragraphs. It will be probably an eternal WIP, considering all the platforms and different tastes involved. If you are a happy person, i.e. you are reading this on its original place of spawning ([fullstack.coach](https://fullstack.coach/post/how-to-write-and-cross-post-your-markdown-content)) or in the post's very core root on [Github](https://github.com/RichStone/content/blob/content/fullstack.coach/write-markdown-distribute-everywhere.md) (YOU NERD!) or on dev.to, then you will always have the most up to date version of it. Congrats!🎉
+By the way, I just always wanted to write that something's an _"Ultimate Guide"_, but actually, it's just a bunch of paragraphs. It will be probably an eternal WIP, considering all the platforms and different tastes involved. If you are a happy person, i.e. you are reading this on its original place of spawning ([fullstack.coach](https://fullstack.coach/post/how-to-write-and-cross-post-your-markdown-content)) or in the post's very core root on [Github](https://github.com/RichStone/content/blob/content/fullstack.coach/write-markdown-distribute-everywhere.md) (YOU NERD!) or on dev.to, then you will always have the most up to date version of it. Congrats!🎉
 
-> In case you start to wonder now: This article is published on all the mentioned platforms with as much automation as possible. The original article was published on [fullstack.coach](https://fullstack.coach/post/how-to-write-and-cross-post-your-markdown-content) and then a few days later, after Google has done its dirty indexing stuff, on all the other platforms including some best practices and canonical URLs. Here you will find out how, in fullest of detail!
+> In case you start to wonder now: This article is published on all the mentioned platforms with as much automation as currently possible. The original article was published on [fullstack.coach](https://fullstack.coach/post/how-to-write-and-cross-post-your-markdown-content) and then a few days later, after Google has done its dirty indexing stuff, on all the other platforms including some best practices and canonical URLs. Here you will find out how in fullest of detail!
 
 ## Why cross post your content at all
 
@@ -42,7 +42,7 @@ Let's talk some serious stuff first so that we have a common standpoint when we 
 
 ### content consistency
 
-Unless you are a daily news agency, you'll probably want to write so-called pillar content. That is to say, content which stays relevant over longer periods of time. This type of content, your guides and tutorials and evergreen stories, sometimes, needs updates and upgrades!
+Unless you are a daily news agency, you'll probably want to write so-called pillar content. That is to say, content that stays relevant over long periods. This type of content, your guides and tutorials and evergreen stories, sometimes, needs updates and upgrades!
 
 That's very painful if you always have to do it manually on all platforms. Those magic platforms that offer a public API are the good guys who give you the possibility to automate your content updates.
 
@@ -66,27 +66,29 @@ Ultimately, if you "own" your content space, at least for a bit, you'll be able 
 
 You might find dev.to, Medium and codementor handy now but you won't be able to do any of the above with them later.
 
-In this context, we can consider platforms like Wordpress already self-hosted, because you own it enough. I can't cope with the plugin environment of Wordpress which is also the reason why I actively advise for a [developer-friendly alternative that I use myself](https://www.alioned.com/post/webflow-for-developers-my-personal-experience-building-our-agency-website-on-webflow): Webflow ([affiliate 🤩 link](https://webflow.com/?rfsn=4246649.252ab0&amp;utm_medium=affiliate)).
+In this context, we can consider platforms like WordPress already self-hosted, because you own it enough. I can't cope with the plugin environment of WordPress which is also the reason why I actively advise for a [developer-friendly alternative that I use myself](https://www.alioned.com/post/webflow-for-developers-my-personal-experience-building-our-agency-website-on-webflow): Webflow ([affiliate 🤩 link](https://webflow.com/?rfsn=4246649.252ab0&amp;utm_medium=affiliate)).
 
-> Congratulations 🎉We've learned a ton about what I think I understand about some blog marketing topics, so now it's time for dirty hands-on work.
+> Congratulations 🎉 We've learned a ton about what I think I understand about some blog marketing topics, so now it's time for dirty hands-on work.
 
 ## IWE - Integrated Writer Environment
 
 Every piece of art starts with an atelier or workshop. This is how my optimal writer atelier looks like:
 
 1. as distraction-free as possible
-1. supportive with grammar and style
+1. ... but simultaneously supportive with grammar and style
 1. markdown-friendly
 1. format-friendly
 
-Writing directly in Grammarly will probably make you the Hemingway of developer blogs, but actually it won't. I find it very destructive, when the all-knowing and all-mighty Grammarly is throwing grammar and orthography errors at me on every third word that I'm bringing to life...
+Writing directly in Grammarly will probably make you the Hemingway of developer blogs, but actually, it won't. I find it very destructive when the all-knowing and all-mighty Grammarly is throwing grammar and orthography errors at me on every third word that I'm bringing to life...
 
-It's not a secret that especially the first draft should be written in some kind of a flow that reflects your own thoughts and style. That's why my writing and editing routine looks something like this:
+It's not a secret that especially the first draft should be written in some kind of flow that reflects your own thoughts and style. That's why my writing and editing routine looks something like this:
 
 1. write the [shitty first draft](http://www.debbiereberwritingcoach.com/the-art-of-the-shitty-first-draft-why-and-how-to-write-it-2/) in VSCode
   Completely distraction-free
 1. full proof-read and edit not earlier as the next day
   Now, turn on the Grammarly plugin inside VSCode
+1. Another edit sometime later on the target platform
+  You'll have another fresh look at the final format of your writing
 
 Checking your spelling and grammar with Grammarly can be tricky, especially if you are writing in rich text formats since copy/pasting ~~can~~ will mess up your format.
 
@@ -96,7 +98,9 @@ You will also install the markdownlint plugin so that you are always kept up to 
 
 ![typing cat gif](https://raw.githubusercontent.com/RichStone/content/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/typing-cat.gif)
 
-A super cool feature of blogging in VSCode with markdownlint are links and images. I would hate to interrupt... (Wow that's scary, as I wrote the word "interrupt" my wife called to ask me about whether I've bought some corn 🌽) ...interrupt the writing flow to search for some links or to upload some images into the cloud. You can just write your markdown like this in markdown:
+A super cool feature of blogging in VSCode with markdownlint are links and images.
+
+I would hate to interrupt... (Wow that's scary, as I wrote the word "interrupt" my wife called to ask me about whether I've bought some corn 🌽) ...interrupt the writing flow to search for some links or to upload some images into the cloud. You can just write your markdown like this in markdown:
 
 ```markdown
 Never know where that damn ([affiliate 🤩 link]() is,
@@ -110,17 +114,17 @@ IMAGE TITLE - markdownlint does not appreciate this:
 ![]()
 ```
 
-So that in the end it looks something like this:
+So that in the end, it looks something like this:
 
 ![markdownlint validation example](https://github.com/RichStone/content/blob/content/fullstack.coach/images/write-markdown-distribute-everywhere/MARKDOWNLINT%20VALIDATION.png?raw=true)
 
 This is impossible to miss on your final edit, no matter how late or early it is that I'm writing this stuff (and yeah, I missed lots of them in the past). It's a fail-safe system :troll: (even better: For the next version of CrossPost, I plan an automation where you will only need to add the local path to VSCode. WIN-WIN.)
 
-Or even better, use some HTML in your markdown, like: `<img alt="I'll add this picture after the 'holidays'🤭">`. If you ever publish your content before the holidays, there will be the classig broken picture image with your alt description.
+Or even better, use some HTML in your markdown, like: `<img alt="I'll add this picture after the 'holidays'🤭">`. If you ever publish your content before the holidays, there will be the classic broken picture image with your alt description.
 
 Take whatever you prefer.
 
-Another thing I like is the 80 character max limit for my writing in markdown but I need the process automated. I tried the VSCode Rewrap plugin, but it created some weird newlines that were displayed in dev.to and webflow in an ugly way. So for now, I'm OK writing everything stringed together. VSCode's softwrap still lets me write and watch the content conveniently.
+Another thing I like is the 80 character max limit for my writing in markdown but I need the process automated. I tried the VSCode Rewrap plugin, but it created some weird newlines that were displayed in dev.to and webflow in an ugly way. So for now, I'm OK writing everything strung together. VSCode's soft wrap still lets me write and watch the content conveniently.
 
 > Huh, this was a wild IWE ride. Since you are all set up with your markdown and Integrated Writer Environment now, let's bash your content out to the different spaces and places 🚀
 
@@ -129,7 +133,7 @@ Another thing I like is the 80 character max limit for my writing in markdown bu
 Especially if you are a developer, GitHub might be a very interesting platform for your content. I use GitHub for various reasons:
 
 1. it makes collaboration on content potentially easier
-1. it lets me open source my content to share the authorship with others
+1. it lets me open-source my content to share the authorship with others
 1. it lets me version control my content
 1. it supports markdown
 
@@ -143,7 +147,7 @@ Make sure you don't have your content in the master branch of your repository si
 ~ git push
 ```
 
-I have a [GitHub repository](https://github.com/RichStone/content) where I store all my published content in the `content` branch. As mentioned, you shouldn't have it in the `master` branch. Otherwise, you risk to get ranked down by Google & Co. because of duplicate content.
+I have a [GitHub repository](https://github.com/RichStone/content) where I store all my published content in the `content` branch. As mentioned, you shouldn't have it in the `master` branch. Otherwise, you risk getting ranked down by Google & Co. because of duplicate content.
 
 By the way, using GitHub for your content, could also be a way to host your pictures (which is always a big issue: How and where do you keep your pictures? IN ONE PLACE... FOREVER!?!?). Just make sure you use the [permalink to the image](https://docs.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files) after you've uploaded it to GitHub! As I understand it, the image links will only break in one case: if, somewhen, you'll decide to get rid of your `content` branch.
 
@@ -151,7 +155,7 @@ By the way, using GitHub for your content, could also be a way to host your pict
 
 Maybe you'd like to host your blog completely on `bloggo.github.io`?
 
-There are many different approaches and I don't host on `.github.io` at the moment myself, so thre are no concrete CrossPost automations for now. But let me know if you'd be interested in something like this and I will see if I can build a solution there :)
+There are many different approaches and I don't host on `.github.io` at the moment myself, so there are no concrete CrossPost automations for now. But let me know if you'd be interested in something like this and I will see if I can build a solution there :)
 
 > How I did it for this post: I don't use .github.io for hosting yet...
 
@@ -165,7 +169,7 @@ When it comes to a full stack developer portfolio or blog, my take is:
 
 This is what I get from webflow (except, if you don't count the times when I build custom integrations for it 😅).
 
-I'm writing blogs since 2011 and I've used tons of different approaches and platforms already(Wordpress, Wix, Jimdo, a public forum and Jekyll on my own server). Webflow just gets the best parts of all of them for me at this stage of my technical understanding. However, you should not touch it, if you are afraid of learning curves or pricing. For no-budget blogs go with a `.github.io` hosting. For low learning curves go to Wordpress (but don't tell afterwards that I haven't warned about the off-turn plugin eco system!)
+I'm writing blogs since 2011 and I've used tons of different approaches and platforms already(WordPress, Wix, Jimdo, a public forum, and Jekyll on my own server). Webflow just gets the best parts of all of them for me at this stage of my technical understanding. However, you should not touch it, if you are afraid of learning curves or pricing. For no-budget blogs go with a `.github.io` hosting. For low learning curves go to WordPress (but don't tell afterward that I haven't warned about the off-turn plugin ecosystem!)
 
 There are some more tips in the pipeline on how webflow was useful to my portfolio page, so keep tuned! 📻
 
@@ -214,7 +218,7 @@ If you want to update your article on all platforms, you can just do again:
 ~ crosspost article your-amazing-writing.md
 ```
 
-All you need to do is to to install CrossPost it on your computer:
+All you need to do is to install CrossPost it on your computer:
 
 ```bash
 # You will need NPM installed on your computer.
@@ -284,7 +288,7 @@ To figure this out, I used the [instructions provided by prism](https://prismjs.
 
 ---
 
-**After publishing on webflow** for the first time, your articles will be in Staged mode. You will still need to make adjustments like setting your custom fields, images, a post summary etc. (integrations for that are on the [wishlist in GitHub](https://github.com/RichStone/crosspost-markdown/issues))
+**After publishing on webflow** for the first time, your articles will be in Staged mode. You will still need to make adjustments like setting your custom fields, images, a post summary, etc. (integrations for that are on the [wishlist in GitHub](https://github.com/RichStone/crosspost-markdown/issues))
 
 When you update your posts, CrossPost will only update your article body and your title (if you changed any of them). If you'd like to have more granular control, we'll need to issue some Pull Requests to CrossPost ;)
 
@@ -304,7 +308,7 @@ If you click inside the webflow editor of your published blog post text and then
 
 ### Add additional CSS to your content collection
 
-You may also want to add some extra CSS to your blog posts collection, e.g. to add some extra margins on headings and paragraphs (h1, h2, p tags etc.). In my experience the raw HTML headings looked a bit pressed together but adding CSS to a collection is done quickly in webflow so that you can add that premium whitespace that everyone's longing for so hard.
+You may also want to add some extra CSS to your blog posts collection, e.g. to add some extra margins on headings and paragraphs (h1, h2, p tags, etc.). In my experience, the raw HTML headings looked a bit pressed together but adding CSS to a collection is done quickly in webflow so that you can add that premium whitespace that everyone's longing for so hard.
 
 Make sure your changes don't conflict with existing posts (if you have any).
 
@@ -312,6 +316,7 @@ This is how my collection CSS kind of looks like:
 
 ```css
 <style>
+
 h1, h2, h3, h4, .heading-h1 , .heading-jumbo , .heading-h2, .heading-h3, .heading-h4 {
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
@@ -350,11 +355,11 @@ I also center images as a default, if you need anything vastly different, you ca
 
 ## dev.to
 
-There is no place like dev.to for software developer and technical bloggers!
+There is no place like dev.to for software developers and technical bloggers!
 
 Now, I could just copy-paste my beautiful markdown to dev.to and it would work. But that's very burdensome, especially considering that in VSCode I am so close to the terminal.
 
-But even more importantly, **what happens if you want to update your content**? I don't know about you, but I want to write long-living content, guides and tutorials. If they get outdated or corrected by your readers and reviewers, you'd probably want to make the changes as quickly as possible. For some articles, this can become a frequent thing to do. And now copy-pasta becomes really annoying, boring, untasty, and even dangerous.
+But even more importantly, **what happens if you want to update your content**? I don't know about you, but I want to write long-living content, guides, and tutorials. If they get outdated or corrected by your readers and reviewers, you'd probably want to make the changes as quickly as possible. For some articles, this can become a frequent thing to do. And now copy-pasta becomes really annoying, boring, untasty, and even dangerous.
 
 Your solution, again:
 
@@ -385,11 +390,11 @@ Please let me know if you'd like us to add more automated configurations like th
 
 - CrossPost will overwrite everything if you should ever add anything manually inside dev.to's or webflow's editor.
 - When you publish with CrossPost, an additional configuration file gets created.
-  - You'll need to store this file together with your posts to keep using CrossPost. Consistency can only be achieved if CrossPost knows about the article IDs on the different platforms.
+  - You'll need to store this file together with your posts to keep using CrossPost. Consistency can only be achieved if CrossPost knows about the article IDs on different platforms.
 - **Your post has to start with an h1 markdown title ('#') in the very first line of your .md file**. 
   - It's a useful markdownlint convention and CrossPost also relies on it to set the title of the posts correctly.
   - The titles from the first line of your file will be automatically before sending them to webflow or dev.to. 
-  - Those titles will be set via the API, so that you don't have the title duplicated as a h1 element inside your article's body!
+  - Those titles will be set via the API so that you don't have the title duplicated as an h1 element inside your article's body!
 - Your markdown files will be converted with [showdown](https://github.com/showdownjs/showdown) to [GitHub flavored markdown](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) before pushing up to space 🚀.
 
 For more technical details on how CrossPost works, current issues and planned features, check out the [GitHub repo](https://github.com/RichStone/crosspost-markdown) or ping me with any doubts :)
@@ -420,9 +425,9 @@ So, if you still want to be seen there, we'll need to add some additional steps 
 
 Codementor - last and probably **least**, since the codementor blogging space has not won any popularity awards yet. Please, correct me if I'm wrong.
 
-It has a nice markdown editor, but I don't have the feeling of big blogging activity on the platform yet. In any case, an additional pair of eyes at your content won't hurt, and you will find that you are in the right place if you have some fitting coaching, mentoring or problem-solving articles going down! With the right content, a codementor article will go kind of viral too!
+It has a nice markdown editor, but I don't have the feeling of big blogging activity on the platform yet. In any case, an additional pair of eyes at your content won't hurt, and you will find that you are in the right place if you have some fitting coaching, mentoring, or problem-solving articles going down! With the right content, a codementor article will go kind of viral too!
 
-As of now, codementor's API doesn't give a damn about POSTing your article's there in an automated way, so that you will actually (even at this developer focused place) need to take the mouse in your hands and click around (sad and boring, I know).
+As of now, codementor's API doesn't give a damn about POSTing your article's there in an automated way so that you will actually (even at this developer-focused place) need to take the mouse in your hands and click around (sad and boring, I know).
 
 I've had an email chat with the nice codementor in-charge folks, and these are your options:
 
@@ -438,7 +443,7 @@ Having written your blog in markdown already, the easiest way to publish it on c
 
 ## Your Custom Platform
 
-Are you using Wordpress, strapi, GitLab or other platforms with APIs for your content?
+Are you using WordPress, strapi, GitLab, or other platforms with APIs for your content?
 
 Let me know if you'd like them integrated with the IWE or with CrossPost and I can look into it!
 
