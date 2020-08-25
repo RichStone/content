@@ -368,12 +368,23 @@ Your solution, again:
 ~ cd content/
 # get your content out there
 ~ crosspost article your-amazing-writing.md --to devto
+# ... lots of cool output ...
+CrossPost...
+...to dev.to!🚀
+
+Successfully updated your dev.to article.👍
 ```
 
 And again, to update your existing article on all platforms:
 
 ```bash
 ~ crosspost article your-amazing-writing.md
+# ... lots of cool output ...
+CrossPost...
+...to all configured platforms!🚀
+
+Updated your article 👍
+Successfully updated your dev.to article.👍
 ```
 
 ### Configurations and Caveats with dev.to
@@ -384,7 +395,11 @@ As of now, with CrossPost your article will be published as a Draft. You will st
 - adding a header image
 - switching the article from Draft to Published
 
+After that, CrossPost will update your content on every `~ crosspost article your-writing.md` leaving any other meta information untouched.
+
 Please let me know if you'd like us to add more automated configurations like this inside CrossPost or feel free to issue a Pull Request, so we'd never have to leave the terminal again 😅
+
+> How I did it on dev.to for this post: I already had my article up there for a while and used `~ crosspost article write-markdown-distribute-everywhere.md` to update it together with the webflow article. When I felt good and ready about the webflow article I went up to dev.to and clicked that cool "Publish" button! 💪 Updates are easy, just doing `~ crosspost article write-markdown-distribute-everywhere.md` again and again.
 
 ## General CrossPost Caveats & Fun Facts
 
@@ -409,17 +424,15 @@ But they do allow for a canonical URL and article imports which did positively s
 
 So, if you still want to be seen there, we'll need to add some additional steps to our ignorance and do some manual cross posting work:
 
-> How I did it for this post: I struggled, as any other developer does too...
+...first, you'll need to import your post via [Medium's import function](https://medium.com/p/import)...
 
-...first, you'll need to import your post via [Medium's import function](https://medium.com/p/import)
-
-<img alt="step1">
-
-...next, you will add the canonical URL to your post.
-
-<img alt="step2">
+...next, go through your article and watch out for formatting issues...
 
 ...and lastly, you might want to make your code syntax highlighted with something like this [tool](https://medium.com/@Maluen0/how-to-add-code-highlighting-in-medium-articles-without-leaving-the-editor-8f24f5a88d28). (Which I obviously haven't tried yet...)
+
+Medium will set the [canonical link for imported articles automatically](https://help.medium.com/hc/en-us/articles/360033930293-Set-a-canonical-link).
+
+> How I did it for this post: I struggled, as any other developer does too… First it looked good and I just saw some redundant newlines. But then all the code blocks were messed up completely, some codeblocks were missing, some lists (when they contained links) were missing too. Wow.
 
 ## codementor
 
@@ -433,13 +446,13 @@ I've had an email chat with the nice codementor in-charge folks, and these are y
 
 ### codementor option 1
 
-Codementor has an [import feature](https://www.codementor.io/posts/import), which will set the canonical URL automatically but might mess up your format.
+Codementor has an [import feature](https://www.codementor.io/posts/import), which will set the canonical URL automatically but could theoretically mess up your format.
 
 ### codementor option 2
 
-Having written your blog in markdown already, the easiest way to publish it on codementor would be to copy it and then to paste it into codementor's markdown editor. The only issue is that you'd need to go the extra mile and hit up the codementor support, so that they add the canonical URL manually, which is not only weird but can also take a few days... (Thus, if you have more than 1 article, they recommend sending them over all your articles at once so that their workload and your waiting time goes down ;)
+Having written your blog in markdown already, you could copy it and then paste it into codementor's markdown editor. The only issue is that you'd need to go the extra mile and hit up the codementor support, so that they add the canonical URL manually, which is not only weird but can also take a few days... (Thus, if you have more than 1 article, they recommend sending them over all your articles at once so that their workload and your waiting time goes down ;)
 
-> How I did it for this post: I went the import route
+> How I did it for this post: I went the import route, and the content looks fine. Like Medium, it looks at first as if there were redundant newlines, but the endresult seems actually to be perfect out-of-the-box. And guess what, code syntax is included! Good work codementors!
 
 ## Your Custom Platform
 
