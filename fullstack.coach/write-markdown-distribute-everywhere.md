@@ -161,7 +161,7 @@ When it comes to a full stack developer portfolio or blog, my take is:
 
 This is what I get from webflow (except, if you don't count the times when I build custom integrations for it 😅).
 
-I'm writing blogs since 2011 and I've used tons of different approaches and platforms already(Wordpress, Wix, Jimdo, a public forum and Jekyll on my own server). Webflow just gets the best parts of all of them for me. You should not touch it, though, if you are afraid of learning curves or pricing. For no-budget blogs go with a `.github.io` hosting. For low learning curves go to Wordpress (but don't tell afterwards that I haven't warned about the off-turn plugin eco system!)
+I'm writing blogs since 2011 and I've used tons of different approaches and platforms already(Wordpress, Wix, Jimdo, a public forum and Jekyll on my own server). Webflow just gets the best parts of all of them for me at this stage of my technical understanding. However, you should not touch it, if you are afraid of learning curves or pricing. For no-budget blogs go with a `.github.io` hosting. For low learning curves go to Wordpress (but don't tell afterwards that I haven't warned about the off-turn plugin eco system!)
 
 There are some more tips in the pipeline on how webflow was useful to my portfolio page, so keep tuned! 📻
 
@@ -296,16 +296,41 @@ If you click inside the webflow editor of your published blog post text and then
   - For example, I can't see the ordered list and unordered list items inside the editor, but it displays correctly in the published version. Since you want to keep your article writing outside of webflow anyway, it shouldn't be too big of a deal.
 - The integration relies on you keeping to make updates to your articles via CrossPost.
 
+> It's lots of stuff to keep in your head for the aftermath, but actually, it's simple: If you publish content with CrossPost, you don't touch the Rich Text Field inside webflow anymore and do all your future changes to the content via CrossPost. If you still do, it might mess up the format and you'd need to republish with CrossPost again.
+
 ### Add additional CSS to your content collection
 
-You may also want to add some extra CSS to your blog posts collection, e.g. to add some extra margins on headings and paragraphs (h1, h2, p tags etc.). In my experience the raw HTML headings looked a bit pressed together but adding CSS to a collection is done quickly in webflow.
+You may also want to add some extra CSS to your blog posts collection, e.g. to add some extra margins on headings and paragraphs (h1, h2, p tags etc.). In my experience the raw HTML headings looked a bit pressed together but adding CSS to a collection is done quickly in webflow so that you can add that premium whitespace that everyone's longing for so hard.
 
 Make sure your changes don't conflict with existing posts (if you have any).
 
-This is how my CSS changes looked like:
+This is how my collection CSS kind of looks like:
 
-CSS FIXES WEBFLOW.png
-![]()
+```css
+<style>
+h1, h2, h3, h4, .heading-h1 , .heading-jumbo , .heading-h2, .heading-h3, .heading-h4 {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    -webkit-hyphens: auto !important;
+    -ms-hyphens: auto !important;
+    -moz-hyphens: auto !important;
+    hyphens: auto !important;
+
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+code {
+    font-size: .8em !important;
+}
+
+p, li, ul, ol, pre, blockquote, div {
+    margin-bottom: 16px !important;
+}
+</style>
+```
+
+Basically, I've just added some margins to the HTML elements. If you have a content-heavy site, you'd be doing this anyway. The word-wrap/hyphen stuff is, I think, webflow-specific: It's so that your layout does not get broken, especially on mobile, with big long heading titles...
 
 > Wow, this was a lot of webflow stuff! The setup is not a pony ride, but after it's done there will be a new milestone in your writing productivity.
 
@@ -365,17 +390,15 @@ So, if you still want to be seen there, we'll need to add some additional steps 
 
 > How I did it for this post: I struggled, as any other developer does too...
 
-...first, you'll need to import your post via [Medium's import function]()
+...first, you'll need to import your post via [Medium's import function](https://medium.com/p/import)
 
-IMPORT YOUR ARTICLE TO MEDIUM.png
 ![]()
 
 ...next, you will add the canonical URL to your post.
 
-ADD CANONICAL URL MEDIUM.png
 ![]()
 
-...and lastly, you might want to make your code syntax highlighted with something like this [tool](). (Which I obviously skipped, because that's too big of a struggle still.)
+...and lastly, you might want to make your code syntax highlighted with something like this [tool](https://medium.com/@Maluen0/how-to-add-code-highlighting-in-medium-articles-without-leaving-the-editor-8f24f5a88d28). (Which I obviously haven't tried yet...)
 
 ## codementor
 
@@ -385,11 +408,17 @@ It has a nice markdown editor, but I don't have the feeling of big blogging acti
 
 As of now, codementor's API doesn't give a damn about POSTing your article's there in an automated way, so that you will actually (even at this developer focused place) need to take the mouse in your hands and click around (sad and boring, I know).
 
-> How I did it for this post: I went the copy pasta route
+I've had an email chat with the nice codementor in-charge folks, and these are your options:
 
-Codementor has an import feature, which will set the canonical URL automatically but might mess up your format.
+### codementor option 1
 
-Having written your blog in markdown already, the easiest way to publish it on codementor would be to copy it and then to paste it into codementor's markdown editor. The only issue is that you'd need to go the extra mile and hit up the codementor support, so that they add the canonical URL manually, which is not only weird but can also take a few days...
+Codementor has an [import feature](https://www.codementor.io/posts/import), which will set the canonical URL automatically but might mess up your format.
+
+### codementor option 2
+
+Having written your blog in markdown already, the easiest way to publish it on codementor would be to copy it and then to paste it into codementor's markdown editor. The only issue is that you'd need to go the extra mile and hit up the codementor support, so that they add the canonical URL manually, which is not only weird but can also take a few days... (Thus, if you have more than 1 article, they recommend sending them over all your articles at once so that their workload and your waiting time goes down ;)
+
+> How I did it for this post: I went the import route
 
 ## Your Custom Platform
 
@@ -403,3 +432,10 @@ Let me know if you'd like them integrated with the IWE or with CrossPost and I c
 - [CrossPost wishlist](https://github.com/RichStone/crosspost-markdown/issues)
 
 And now go let your content be seen! 🚀🚀🚀
+
+---
+
+Images Attribution:
+
+- _Header Illustration by [Freepik Stories](https://stories.freepik.com/design)_
+- _Typing cat gif by [tenor](https://tenor.com/view/typing-laptop-cat-gif-5822667)_
