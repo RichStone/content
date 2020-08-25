@@ -94,8 +94,7 @@ The Grammarly app seems to work fine with copy-pasting markdown. But there is al
 
 You will also install the markdownlint plugin so that you are always kept up to date about any issues you introduce to your beautiful markdown files by chaotically typing things.
 
-typing-cat.gif
-![]()
+![typing cat gif](https://github.com/RichStone/content/blob/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/typing-cat.gif)
 
 A super cool feature of blogging in VSCode with markdownlint are links and images. I would hate to interrupt... (Wow that's scary, as I wrote the word "interrupt" my wife called to ask me about whether I've bought some corn 🌽) ...interrupt the writing flow to search for some links or to upload some images into the cloud. You can just write your markdown like this in markdown:
 
@@ -113,8 +112,7 @@ IMAGE TITLE - markdownlint does not appreciate this:
 
 So that in the end it looks something like this:
 
-MARKDOWNLINT VALIDATION.png
-![]()
+![markdownlint validation example](https://github.com/RichStone/content/blob/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/MARKDOWNLINT%20VALIDATION.png)
 
 This is impossible to miss on your final edit, no matter how late or early it is that I'm writing this stuff (and yeah, I missed lots of them in the past). It's a fail-safe system :troll: (even better: For the next version of CrossPost, I plan an automation where you will only need to add the local path to VSCode. WIN-WIN.)
 
@@ -142,6 +140,8 @@ Make sure you don't have your content in the master branch of your repository si
 ```
 
 I have a [GitHub repository](https://github.com/RichStone/content) where I store all my published content in the `content` branch. As mentioned, you shouldn't have it in the `master` branch. Otherwise, you risk to get ranked down by Google & Co. because of duplicate content.
+
+By the way, using GitHub for your content, could also be a way to host your pictures (which is always a big issue: How and where do you keep your pictures? IN ONE PLACE... FOREVER!?!?). Just make sure you use the [permalink to the image](https://docs.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files) after you've uploaded it to GitHub! As I understand it, the image links will only break in one case: if, somewhen, you'll decide to get rid of your `content` branch.
 
 ## .github.io
 
