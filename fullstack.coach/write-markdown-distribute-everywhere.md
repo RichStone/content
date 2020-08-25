@@ -116,9 +116,13 @@ So that in the end it looks something like this:
 
 This is impossible to miss on your final edit, no matter how late or early it is that I'm writing this stuff (and yeah, I missed lots of them in the past). It's a fail-safe system :troll: (even better: For the next version of CrossPost, I plan an automation where you will only need to add the local path to VSCode. WIN-WIN.)
 
-I like the 80 character max limit for my writing in markdown but I need the process automated. I tried the VSCode Rewrap plugin, but it created some weird newlines that were displayed in dev.to and webflow in an ugly way. So for now, I'm OK writing everything stringed together. VSCode's softwrap still lets me write conveniently if I need a smaller editor window, so that's not an issue at all.
+Or even better, use some HTML in your markdown, like: `<img alt="I'll add this picture after the 'holidays'🤭">`. If you ever publish your content before the holidays, there will be the classig broken picture image with your alt description.
 
-> Since you are all set up with your markdown and IWE now, let's bash your content out to the different spaces and places 🚀
+Take whatever you prefer.
+
+Another thing I like is the 80 character max limit for my writing in markdown but I need the process automated. I tried the VSCode Rewrap plugin, but it created some weird newlines that were displayed in dev.to and webflow in an ugly way. So for now, I'm OK writing everything stringed together. VSCode's softwrap still lets me write and watch the content conveniently.
+
+> Huh, this was a wild IWE ride. Since you are all set up with your markdown and Integrated Writer Environment now, let's bash your content out to the different spaces and places 🚀
 
 ## GitHub
 
@@ -327,10 +331,20 @@ code {
 p, li, ul, ol, pre, blockquote, div {
     margin-bottom: 16px !important;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 </style>
 ```
 
 Basically, I've just added some margins to the HTML elements. If you have a content-heavy site, you'd be doing this anyway. The word-wrap/hyphen stuff is, I think, webflow-specific: It's so that your layout does not get broken, especially on mobile, with big long heading titles...
+
+I also center images as a default, if you need anything vastly different, you can write HTML in your markdown file, give it a special class and then write the CSS class for it inside webflow. Dev.to will center them for you automatically, though.
 
 > Wow, this was a lot of webflow stuff! The setup is not a pony ride, but after it's done there will be a new milestone in your writing productivity.
 
@@ -369,11 +383,13 @@ Please let me know if you'd like us to add more automated configurations like th
 
 ## General CrossPost Caveats & Fun Facts
 
+- CrossPost will overwrite everything if you should ever add anything manually inside dev.to's or webflow's editor.
 - When you publish with CrossPost, an additional configuration file gets created.
   - You'll need to store this file together with your posts to keep using CrossPost. Consistency can only be achieved if CrossPost knows about the article IDs on the different platforms.
-- **Your post has to start with an h1 markdown title ('#')**. It's a useful
-  markdownlint convention and CrossPost also relies on it to set the title of the posts correctly.
-  - Titles on webflow and dev.to will be automatically removed from the article body and will be set via the API.
+- **Your post has to start with an h1 markdown title ('#') in the very first line of your .md file**. 
+  - It's a useful markdownlint convention and CrossPost also relies on it to set the title of the posts correctly.
+  - The titles from the first line of your file will be automatically before sending them to webflow or dev.to. 
+  - Those titles will be set via the API, so that you don't have the title duplicated as a h1 element inside your article's body!
 - Your markdown files will be converted with [showdown](https://github.com/showdownjs/showdown) to [GitHub flavored markdown](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) before pushing up to space 🚀.
 
 For more technical details on how CrossPost works, current issues and planned features, check out the [GitHub repo](https://github.com/RichStone/crosspost-markdown) or ping me with any doubts :)
@@ -392,11 +408,11 @@ So, if you still want to be seen there, we'll need to add some additional steps 
 
 ...first, you'll need to import your post via [Medium's import function](https://medium.com/p/import)
 
-![]()
+<img alt="step1">
 
 ...next, you will add the canonical URL to your post.
 
-![]()
+<img alt="step2">
 
 ...and lastly, you might want to make your code syntax highlighted with something like this [tool](https://medium.com/@Maluen0/how-to-add-code-highlighting-in-medium-articles-without-leaving-the-editor-8f24f5a88d28). (Which I obviously haven't tried yet...)
 
