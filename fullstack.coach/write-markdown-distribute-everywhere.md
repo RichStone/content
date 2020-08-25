@@ -94,7 +94,7 @@ The Grammarly app seems to work fine with copy-pasting markdown. But there is al
 
 You will also install the markdownlint plugin so that you are always kept up to date about any issues you introduce to your beautiful markdown files by chaotically typing things.
 
-![typing cat gif](https://github.com/RichStone/content/blob/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/typing-cat.gif)
+![typing cat gif](https://raw.githubusercontent.com/RichStone/content/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/typing-cat.gif)
 
 A super cool feature of blogging in VSCode with markdownlint are links and images. I would hate to interrupt... (Wow that's scary, as I wrote the word "interrupt" my wife called to ask me about whether I've bought some corn 🌽) ...interrupt the writing flow to search for some links or to upload some images into the cloud. You can just write your markdown like this in markdown:
 
@@ -112,7 +112,7 @@ IMAGE TITLE - markdownlint does not appreciate this:
 
 So that in the end it looks something like this:
 
-![markdownlint validation example](https://github.com/RichStone/content/blob/0d2fd292c648ab85c7504ab08ba4574cf67d4450/fullstack.coach/images/write-markdown-distribute-everywhere/MARKDOWNLINT%20VALIDATION.png)
+![markdownlint validation example](https://github.com/RichStone/content/blob/content/fullstack.coach/images/write-markdown-distribute-everywhere/MARKDOWNLINT%20VALIDATION.png?raw=true)
 
 This is impossible to miss on your final edit, no matter how late or early it is that I'm writing this stuff (and yeah, I missed lots of them in the past). It's a fail-safe system :troll: (even better: For the next version of CrossPost, I plan an automation where you will only need to add the local path to VSCode. WIN-WIN.)
 
@@ -210,17 +210,17 @@ If you want to update your article on all platforms, you can just do again:
 ~ crosspost article your-amazing-writing.md
 ```
 
-All you need to do is to configure CrossPost once.
-
-```bash
-~ crosspost configure --help
-```
-
-And of course to install it on your computer:
+All you need to do is to to install CrossPost it on your computer:
 
 ```bash
 # You will need NPM installed on your computer.
 ~ npm install crosspost -g
+```
+
+And to configure CrossPost once:
+
+```bash
+~ crosspost configure --help
 ```
 
 ### Configuration steps & caveats with Webflow
