@@ -2,6 +2,17 @@
 
 This is your _Ultimate Guide_ that proposes a solution to write your blog in markdown and to cross post it to different platforms. Here you will find tips on how to set up your IWE (Integrated Writer's Environment) and even a few goodies on marketing as well as on content creation.
 
+I warn you, this is a monstrous piece of content, so here's the rough outline:
+
+1. Some cross posting, SEO & hosting theory
+1. Markdown writing tips (Integrated Writer Environment)
+1. Content distribution  
+  GitHub  
+  Webflow  
+  dev.to  
+  Medium  
+  codementor
+
 By the way, the original title of this post was:
 
 ## The Perfect Setup to Write your Software Developer Blog Content in Markdown and CrossPost it to Webflow, dev.to, GitHub, Medium & codementor
