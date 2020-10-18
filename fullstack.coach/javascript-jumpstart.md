@@ -59,7 +59,7 @@ The naming doesn't matter too much, choose your preference.
 Consider something like this for structuring your project:
 
 ```bash
-projec-root/
+projec-name/
 ├── static/
 │   ├── js/
 │   │   ├──main.js
@@ -83,6 +83,8 @@ Generally speaking, when you do load your the easiest and most obvious way is to
 ```html
 <script src="./static/js/main.js"></script>
 <script src="https://www.gruggletagger.com/gtag/js?id=UA43-1"></script>
+... thousand scripts later...
+<script src="./static/vendor/jquery/jquery.js/">
 ```
 
 If you add scripts like this to every one of your pages, your scripts become scattered all over the place and you have to keep an eye on the order.
@@ -171,7 +173,11 @@ I play it agile and enjoy the freedom of aesthetic as long as I don't run into p
 With today's JS you'll see functions defined in many ways, like for example:
 
 ```js
-function doStuff() {}
+// window
+
+function doStuff() {
+  this
+}
 
 var doStuff = function() {}
 
@@ -184,7 +190,14 @@ The key here again is:
 
 > "Consistency"
 
-So, pick one and follow through.
+So, pick one and follow through. One thing to keep in mind though, arrow function declarations, the last one in the example above, are comparetively new. They were designed for a different purpose and allow to a more functional approach to coding in JS.
+
+They do things differently, [like...](https://www.w3schools.com/js/js_arrow_function.asp)
+
+> In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+> With arrow functions the this keyword always represents the object that defined the arrow function.
+
+Or, if you use to work with objects, you won't be able to initialize object instances with arrow functions, since they lack a constructor.
 
 The long answer, you'll find in books and [awesome blog posts](https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/) ;)
 
@@ -286,9 +299,39 @@ One of the first things you should understand well are scopes. This is the actua
 
 ## Events
 
-### .stopPropagation()
+Events are fun and make a good portion of interaction with your user. You can also bend them and work them to your own purposes, so you should get acquinted with them early on.
 
-### .preventDefault()
+### preventDefault
+
+Some elements do stuff by design, like a submit button `<button type="submit">` inside a form will magically submit the form. Sometimes though, you want your own logic behind the submit button. A `.preventDefault()` will help you achieve that most of the time.
+
+### stopPropagation
+
+In other cases, you have nested elements that fire events. Because of how events work, you might be surprised that `preventDefault` is not working.
+
+Of course, there is quite some theory behind events, bubbling and event propagations.
+
+```pseudo
+                 | |  / \
+-----------------| |--| |-----------------
+| element1       | |  | |                |
+|   -------------| |--| |-----------     |
+|   |element2    \ /  | |          |     |
+|   --------------------------------     |
+|        W3C event model                 |
+------------------------------------------
+```
+
+"Any event taking place in the W3C event model is first captured until it reaches the target element and then bubbles up again.", as described [here](https://stackoverflow.com/a/23954430/5925094).
+
+Basically speaking, if you have 2 events firing on click of 2 nested elements, then 
+
+<p class="codepen" data-height="208" data-theme-id="light" data-default-tab="js,result" data-user="RichStone" data-slug-hash="xxOxmrz" style="height: 208px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxOxmrz">
+  <span>See the Pen <a href="https://codepen.io/RichStone/pen/xxOxmrz">
+  xxOxmrz</a> by Rich Stone (<a href="https://codepen.io/RichStone">@RichStone</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## Persisting State
 
